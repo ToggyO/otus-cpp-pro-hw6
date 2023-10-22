@@ -21,6 +21,9 @@ TEST(Matrix, Common)
 
     matrix[1][2][2] = 0;
     EXPECT_EQ(matrix.size(), 1);
+
+    ((matrix[100][100][100] = 314) = 0) = 217;
+    EXPECT_EQ(matrix[100][100][100], 217);
 }
 
 TEST(Matrix, ComplexType) {
@@ -41,4 +44,7 @@ TEST(Matrix, ComplexType) {
 
     matrix[1][2][2] = default_str;
     EXPECT_EQ(matrix.size(), 1);
+
+    ((matrix[100][100][100] = "kek") = "shpek") = "shrek";
+    EXPECT_EQ((std::string)matrix[100][100][100], "shrek");
 }
